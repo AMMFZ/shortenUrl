@@ -1,0 +1,12 @@
+# Remove php extension from the file name
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+# set the Headers for the Restful Api
+Header always set Access-Control-Allow-Origin http://localhost:4200
+Header always set Access-Control-Max-Age "1000"
+Header always set Access-Control-Allow-Headers  "X-Requested-With, Content-Type, Origin, Authorization
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Headers  "Origin, X-Requested-With, Content-Type, Access-Control-Allow-Origin"
+Header always set Access-Control-Allow-Methods "PUT, GET, POST, DELETE, OPTIONS"
